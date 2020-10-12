@@ -656,6 +656,11 @@ local syntax = {
     GitGutterChange = {fg = orange0, bg = bg0, style = 'bold'},
     GitGutterDelete = {fg = red, bg = bg0, style = 'bold'},
     GitGutterChangeDelete = {fg = red1, bg = bg0, style = 'bold'},
+    -- Git Messenger (rhysd/git-messenger.vim)
+    gitmessengerPopupNormal = {fg = fg0, bg = bg1}, -- Normal color in popup window
+    gitmessengerHeader = {fg = fg0, bg = bg1},      -- Header such as 'Commit:', 'Author:'
+    gitmessengerHash = {fg = fg0, bg = bg1},        -- Commit hash at 'Commit:' header
+    gitmessengerHistory = {fg = fg0, bg = bg1},     -- History number at 'History:' header
     -- Indent Guide (nathanaelkane/vim-indent-guides)
     IndentGuidesOdd = {fg = bg0, bg = bg2, style = 'reverse'},
     IndentGuidesEven = {fg = bg0, bg = bg1, style = 'reverse'},
