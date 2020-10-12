@@ -1,4 +1,4 @@
--- Name:         Spacebuddy
+-- Name:         Space Nvim Theme
 -- Description:  Light and dark theme inspired by spacemacs-theme
 -- Author:       Th3Whit3Wolf <the.white.wolf.is.1337@gmail.com>
 -- Maintainer:   Th3Whit3Wolf <the.white.wolf.is.1337@gmail.com>
