@@ -10,8 +10,7 @@ local function highlight(group, styles)
     local style = styles.style and 'gui=' .. styles.style or 'gui=NONE'
     local fg = styles.fg and 'guifg=' .. styles.fg or 'guifg=NONE'
     local bg = styles.bg and 'guibg=' .. styles.bg or 'guibg=NONE'
-    vim.api.nvim_command('highlight ' .. group .. ' ' .. style .. ' ' .. fg ..
-                             ' ' .. bg)
+    vim.api.nvim_command('highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg)
 end
 
 if vim.o.background == 'dark' then
@@ -491,31 +490,31 @@ local syntax = {
     luaFunction = {fg = aqua0, bg = bg0},
     luaTable = {fg = orange0, bg = bg0},
     -- Markdown (keep consistent with HTML, above
-    markdownItalic = {fg = fg3, bg = NONE, style = 'italic'},
-    markdownH1 = {fg = blue0, bg = NONE, style = 'bold'},
-    markdownH2 = {fg = aqua0, bg = NONE, style = 'bold'},
-    markdownH3 = {fg = green, bg = NONE, style = 'bold'},
-    markdownH4 = {fg = yellow, bg = NONE, style = 'bold'},
-    markdownH5 = {fg = yellow, bg = NONE},
-    markdownH6 = {fg = yellow, bg = NONE},
-    markdownCode = {fg = purple2, bg = NONE},
-    mkdCode = {fg = purple2, bg = NONE},
-    markdownCodeBlock = {fg = aqua0, bg = NONE},
-    markdownCodeDelimiter = {fg = orange0, bg = NONE},
-    mkdCodeDelimiter = {fg = orange0, bg = NONE},
-    markdownBlockquote = {fg = grey, bg = NONE},
-    markdownListMarker = {fg = grey, bg = NONE},
-    markdownOrderedListMarker = {fg = grey, bg = NONE},
+    markdownItalic = {fg = fg3, bg = bg0, style = 'italic'},
+    markdownH1 = {fg = blue0, bg = bg0, style = 'bold'},
+    markdownH2 = {fg = aqua0, bg = bg0, style = 'bold'},
+    markdownH3 = {fg = green, bg = bg0, style = 'bold'},
+    markdownH4 = {fg = yellow, bg = bg0, style = 'bold'},
+    markdownH5 = {fg = yellow, bg = bg0},
+    markdownH6 = {fg = yellow, bg = bg0},
+    markdownCode = {fg = purple2, bg = bg0},
+    mkdCode = {fg = purple2, bg = bg0},
+    markdownCodeBlock = {fg = aqua0, bg = bg0},
+    markdownCodeDelimiter = {fg = orange0, bg = bg0},
+    mkdCodeDelimiter = {fg = orange0, bg = bg0},
+    markdownBlockquote = {fg = grey, bg = bg0},
+    markdownListMarker = {fg = grey, bg = bg0},
+    markdownOrderedListMarker = {fg = grey, bg = bg0},
     markdownRule = {fg = grey, bg = NONE},
-    markdownHeadingRule = {fg = grey, bg = NONE},
-    markdownUrlDelimiter = {fg = fg3, bg = NONE},
-    markdownLinkDelimiter = {fg = fg3, bg = NONE},
-    markdownLinkTextDelimiter = {fg = fg3, bg = NONE},
-    markdownHeadingDelimiter = {fg = orange0, bg = NONE},
-    markdownUrl = {fg = purple0, bg = NONE},
-    markdownUrlTitleDelimiter = {fg = green, bg = NONE},
-    markdownLinkText = {fg = blue0, bg = NONE, style = 'underline'},
-    markdownIdDeclaration = {fg = blue0, bg = NONE, style = 'underline'},
+    markdownHeadingRule = {fg = grey, bg = bg0},
+    markdownUrlDelimiter = {fg = fg3, bg = bg0},
+    markdownLinkDelimiter = {fg = fg3, bg = bg0},
+    markdownLinkTextDelimiter = {fg = fg3, bg = bg0},
+    markdownHeadingDelimiter = {fg = orange0, bg = bg0},
+    markdownUrl = {fg = purple0, bg = bg0},
+    markdownUrlTitleDelimiter = {fg = green, bg = bg0},
+    markdownLinkText = {fg = blue0, bg = bg0, style = 'underline'},
+    markdownIdDeclaration = {fg = blue0, bg = bg0, style = 'underline'},
     -- MoonScript
     moonSpecialOp = {fg = fg3, bg = bg0},
     moonExtendedOp = {fg = fg3, bg = bg0},
