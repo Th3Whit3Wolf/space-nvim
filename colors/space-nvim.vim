@@ -1,138 +1,126 @@
--- Name:         Space Nvim Theme
--- Description:  Light and dark theme inspired by spacemacs-theme
--- Author:       Th3Whit3Wolf <the.white.wolf.is.1337@gmail.com>
--- Maintainer:   Th3Whit3Wolf <the.white.wolf.is.1337@gmail.com>
--- Website:      https://github.com/Th3Whit3Wolf/space-nvim-theme
--- License:      Vim License (see `:help license`)
-vim.g.colors_name = 'space-nvim-theme'
--- Highlight Function And Color definitons
-local function highlight(group, styles)
-    local style = styles.style and 'gui=' .. styles.style or 'gui=NONE'
-    local fg = styles.fg and 'guifg=' .. styles.fg or 'guifg=NONE'
-    local bg = styles.bg and 'guibg=' .. styles.bg or 'guibg=NONE'
-    vim.api.nvim_command('highlight ' .. group .. ' ' .. style .. ' ' .. fg .. ' ' .. bg)
-end
+lua << EOF
+vim.g.colors_name = "space-nvim"
 
-if vim.o.background == 'dark' then
+if vim.o.background == "dark" then
     -- Dark Colors
-    bg0 = '#292b2e'
-    bg1 = '#212026'
-    bg2 = '#100a14'
-    bg3 = '#0a0814'
-    bg4 = '#34323e'
-    fg0 = '#cdcdcd'
-    fg1 = '#b2b2b2'
-    fg2 = '#8e8e8e'
-    fg3 = '#727272'
-    fg4 = '#5b5b5b'
-    fg5 = '#9a9aba'
-    fg6 = '#5e5079'
-    fg7 = '#666666'
-    grey = '#44505c'
-    grey1 = '#768294'
-    red1 = '#ce537a'
-    blue1 = '#7590db'
-    purple0 = '#bc6ec5'
-    purple1 = '#d698fe'
-    purple2 = '#a45bad'
-    purple3 = '#5d4d7a'
-    purple4 = '#34323e'
-    aqua0 = '#2d9574'
-    orange0 = '#e18254'
-    cyan = '#28def0'
-    mat = '#86dc2f'
-    meta = '#9f8766'
-    spacelight = '#444155' -- highlight seems to be an illegal keyword here
-    comp = '#c56ec3'
-    cblk = '#cbc1d5'
+    bg0 = {"#292b2e", 16, "bg0"}
+    bg1 = {"#212026", 235, "bg1"}
+    bg2 = {"#100a14", 233, "bg2"}
+    bg3 = {"#0a0814", 16, "bg3"}
+    bg4 = {"#34323e", 59, "bg4"}
+    fg0 = {"#cdcdcd", 252, "fg0"}
+    fg1 = {"#b2b2b2", 249, "fg1"}
+    fg2 = {"#8e8e8e", 245, "fg2"}
+    fg3 = {"#727272", 243, "fg3"}
+    fg4 = {"#9a9aba", 247, "fg5"}
+    fg5 = {"#5e5079", 241, "fg6"}
+    --fg6        = {'#666666', 241, 'fg7'}
+    grey = {"#44505c", 239, "grey"}
+    grey1 = {"#768294", 102, "grey1"}
+    red1 = {"#ce537a", 168, "red1"}
+    blue1 = {"#7590db", 68, "blue1"}
+    purple0 = {"#bc6ec5", 104, "purple0"}
+    purple1 = {"#d698fe", 177, "purple1"}
+    purple2 = {"#a45bad", 245, "purple2"}
+    purple3 = {"#5d4d7a", 241, "purple3"}
+    purple4 = {"#34323e", 59, "purple4"}
+    aqua0 = {"#2d9574", 30, "aqua0"}
+    orange0 = {"#e18254", 246, "orange0"}
+    cyan = {"#28def0", 45, "cyan"}
+    mat = {"#86dc2f", 245, "mat"}
+    meta = {"#9f8766", 137, "meta"}
+    spacelight = {"#444155", 238, "spacelight"} -- highlight seems to be an illegal keyword here
+    comp = {"#c56ec3", 248, "comp"}
+    cblk = {"#cbc1d5", 252, "cblk"}
 
     -- Terminal Colors
-    vim.g.terminal_color_0 = '#292b2e'
-    vim.g.terminal_color_8 = '#44505c'
-    vim.g.terminal_color_12 = '#4f97d7'
-    vim.g.terminal_color_13 = '#bc6ec5'
-    vim.g.terminal_color_14 = '#2d9574'
-    vim.g.terminal_color_7 = '#5b5b5b'
-    vim.g.terminal_color_15 = '#b2b2b2'
+    tc8 = {"#5b5b5b", 240, "tc8"}
+    tc9 = {"#44505c", 239, "tc9"}
+    tc13 = {"#4f97d7", 68, "tc13"}
+    tc14 = {"#bc6ec5", 104, "tc14"}
+    tc15 = {"#2d9574", 30, "tc15"}
+    tc16 = {"#bc6ec5", 104, "tc16"}
 else
     -- Light Colors
-    bg0 = '#fbf8ef'
-    bg1 = '#efeae9'
-    bg2 = '#e3dedd'
-    bg3 = '#d2ceda'
-    bg4 = '#a8a4ae'
-    fg0 = '#83758c'
-    fg1 = '#655370'
-    fg2 = '#5a4a64'
-    fg3 = '#504259'
-    fg4 = '#463a4e'
-    fg5 = '#8c799f'
-    fg6 = '#c8c6dd'
-    grey = '#a8a8bf'
-    grey1 = '#768294'
-    red1 = '#ba2f59'
-    blue1 = '#715ab1'
-    purple0 = '#6c3163'
-    purple1 = '#86589e'
-    purple2 = '#4e3163'
-    purple3 = '#d3d3e7'
-    purple4 = '#e2e0ea'
-    aqua0 = '#24775c'
-    orange0 = '#b46843'
-    cyan = '#21b8c7'
-    mat = '#ba2f59'
-    meta = '#da8b55'
-    spacelight = '#d3d3e7' -- highlight seems to be an illegal keyword here
-    comp = '#6c4173'
-    cblk = '#655370'
+    bg0 = {"#fbf8ef", 255, "bg0"}
+    bg1 = {"#efeae9", 255, "bg1"}
+    bg2 = {"#e3dedd", 254, "bg2"}
+    bg3 = {"#d2ceda", 252, "bg3"}
+    bg4 = {"#a8a4ae", 248, "bg4"}
+    fg0 = {"#83758c", 244, "fg0"}
+    fg1 = {"#655370", 241, "fg1"}
+    fg2 = {"#5a4a64", 240, "fg2"}
+    fg3 = {"#504259", 239, "fg3"}
+    fg4 = {"#8c799f", 103, "fg5"}
+    fg5 = {"#c8c6dd", 188, "fg6"}
+    -- fg6        = {'#666666', 241, 'fg7'}
+    grey = {"#a8a8bf", 145, "grey"}
+    grey1 = {"#768294", 102, "grey1"}
+    red1 = {"#ba2f59", 125, "red1"}
+    blue1 = {"#715ab1", 61, "blue1"}
+    purple0 = {"#6c3163", 240, "purple0"}
+    purple1 = {"#86589e", 97, "purple1"}
+    purple2 = {"#4e3163", 239, "purple2"}
+    purple3 = {"#d3d3e7", 253, "purple3"}
+    purple4 = {"#e2e0ea", 188, "purple4"}
+    aqua0 = {"#24775c", 29, "aqua0"}
+    orange0 = {"#b46843", 131, "orange0"}
+    cyan = {"#21b8c7", 38, "cyan"}
+    mat = {"#ba2f59", 125, "mat"}
+    meta = {"#da8b55", 173, "meta"}
+    spacelight = {"#d3d3e7", 253, "spacelight"} -- highlight seems to be an illegal keyword here
+    comp = {"#6c4173", 60, "comp"}
+    cblk = {"#655370", 241, "cblk"}
 
     -- Terminal Colors
-    vim.g.terminal_color_0 = '#fbf8ef'
-    vim.g.terminal_color_8 = '#a8a8bf'
-    vim.g.terminal_color_12 = '#3a81c3'
-    vim.g.terminal_color_13 = '#6c3163'
-    vim.g.terminal_color_14 = '#24775c'
-    vim.g.terminal_color_7 = '#463a4e'
-    vim.g.terminal_color_15 = '#655370'
+    tc8       = {'#463a4e', 238, 'tc8'}
+    tc9       = {'#a8a8bf', 138, 'tc9'}
+    tc13      = {'#3a81c3', 68, 'tc13'}
+    tc14      = {'#6c3163', 240, 'tc14'}
+    tc15      = {'#24775c', 29, 'tc15'}
+    tc16      = {'#655370', 241, 'tc16'}
 end
 
--------------------
--- Common Colors --
--------------------
+-- Common 
+local foreg = {"#5b5b5b", 240, "fg"}
+local red = {"#f2241f", 196, "red"}
+local red0 = {"#f54e3c", 244, "red0"}
+local blue = {"#58b0d9", 247, "blue"}
+local blue0 = {"#4f97d7", 68, "blue0"}
+local purple = {"#544a65", 59, "purple"}
+local green = {"#67b11d", 242, "green"}
+local green0 = {"#2aa1ae", 244, "green0"}
+local aqua = {"#4495b4", 244, "aqua"}
+local orange = {"#d79650", 246, "orange"}
+local yellow = {"#b1951d", 136, "yellow"}
+local yellow1 = {"#e5d11c", 247, "yellow1"}
+local war = {"#dc752f", 244, "war"}
+local number = {"#e697e6", 252, "number"}
+local debug = {"#ffc8c8", 224, "debug"}
+local float = {"#b7b7ff", 147, "float"}
+local delim = {"#74baac", 247, "delim"}
 
-red = '#f2241f'
-red0 = '#f54e3c'
-blue = '#58b0d9'
-blue0 = '#4f97d7'
-purple = '#544a65'
-green = '#67b11d'
-green0 = '#2aa1ae'
-aqua = '#4495b4'
-orange = '#d79650'
-yellow = '#b1951d'
-yellow1 = '#e5d11c'
-war = '#dc752f'
-number = '#e697e6'
-debug = '#ffc8c8'
-float = '#b7b7ff'
-delim = '#74baac'
+local tc2 = {"#d26487", 168, "tc2"}
+local tc3 = {"#35a8a5", 73, "tc3"}
+local tc4 = {"#b89f33", 244, "tc4"}
+local tc5 = {"#6981c5", 246, "tc5"}
+local tc6 = {"#a15ea7", 133, "tc6"}
+local tc7 = {"#288668", 240, "tc7"}
+local tc10 = {"#f2241f", 196, "tc10"}
+local tc12 = {"#a15ea7", 133, "tc12"}
 
-----------------------------
--- Common Terminal Colors --
-----------------------------
+--[[ DO NOT EDIT `BG` NOR `FG`. ]]
+local BG = "bg"
+local FG = "fg"
+local NONE = {}
 
-vim.g.terminal_color_1 = '#d26487'
-vim.g.terminal_color_2 = '#35a8a5'
-vim.g.terminal_color_3 = '#b89f33'
-vim.g.terminal_color_4 = '#6981c5'
-vim.g.terminal_color_5 = '#a15ea7'
-vim.g.terminal_color_6 = '#288668'
-vim.g.terminal_color_9 = '#f2241f'
-vim.g.terminal_color_10 = '#67b11d'
-vim.g.terminal_color_11 = '#b1951d'
+--[[ These are the ones you should edit. ]]
+-- This is the only highlight that must be defined separately.
+local highlight_group_normal = {fg = gray_light, bg = black}
 
-local syntax = {
-    -------------------------------------------------------------
+-- This is where the rest of your highlights should go.
+local highlight_groups = {
+        -------------------------------------------------------------
     -- Syntax Groups (descriptions and ordering from `:h w18`) --
     -------------------------------------------------------------
 
@@ -792,6 +780,31 @@ local syntax = {
     -- TSURI = {} -- Any URI like a link or email.
     -- TSVariable = {} -- Any URI like a link or email.
     -- TSVariableBuiltin = {}  -- Variable names that are defined by the languages, like `this` or `self`.
+
 }
 
-for group, styles in pairs(syntax) do highlight(group, styles) end
+local terminal_ansi_colors = {
+    [1] = bg0,
+    [2] = tc2,
+    [3] = tc3,
+    [4] = tc4,
+    [5] = tc5,
+    [6] = tc6,
+    [7] = tc7,
+    [8] = tc8,
+    [9] = red,
+    [10] = green,
+    [11] = tc6,
+    [12] = tc12,
+    [13] = tc13,
+    [14] = tc14,
+    [15] = tc15,
+    [16] = tc13
+}
+
+require(vim.g.colors_name)(highlight_group_normal, highlight_groups, terminal_ansi_colors)
+
+-- Thanks to Iron-E (https://github.com/Iron-E) for the template (Iron-E/nvim-highlite).
+-- vim: ft=lua
+
+EOF
