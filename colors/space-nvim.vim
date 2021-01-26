@@ -117,6 +117,14 @@ local NONE = {}
 --[[ These are the ones you should edit. ]]
 -- This is the only highlight that must be defined separately.
 local highlight_group_normal = {fg = gray_light, bg = black}
+    
+local normal = (function()
+    if vim.g.space_nvim_transparent_bg ~= true then
+        return  {fg = fg1, bg = bg0}
+    else
+        return  {fg = fg1, bg = NONE}
+    end
+end)()
 
 -- This is where the rest of your highlights should go.
 local highlight_groups = {
@@ -185,7 +193,7 @@ local highlight_groups = {
     ModeMsg = {fg = yellow1}, -- 'showmode' message (e.g., "-- INSERT --")
     MoreMsg = {fg = yellow1}, -- more-prompt
     NonText = {fg = grey}, -- '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-    Normal = {fg = fg1, bg = bg0}, -- normal text
+    Normal = normal, -- normal text
     Pmenu = {fg = fg5, bg = purple4}, -- Popup menu: normal item.
     PmenuSel = {fg = fg0, bg = fg6}, -- Popup menu: selected item.
     PmenuSbar = {fg = fg0, bg = bg1}, -- Popup menu: scrollbar.
