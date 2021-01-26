@@ -747,6 +747,9 @@ local highlight_groups = {
     LspDiagnosticsSignWarning            = { fg = yellow },
     LspDiagnosticsSignInformation        = { fg = blue },
     LspDiagnosticsSignHint               = { fg = green0 },
+    LspReferenceText                     = { style = 'reverse' },
+    LspReferenceRead                     = { style = 'reverse' },
+    LspReferenceWrite                    = { fg = red1, style = 'reverse' },
 
     -----------------------------
     -- TreeSitter Highlighting --
