@@ -68,8 +68,6 @@ vim.g.space_nvim_transparent_bg = true
 
 ### TODO
 
-- [ ] Better LSP Highlighting
-- [ ] Better Diagnostic Highlighting
 - [ ] Better Tree Sitter Highlighting
 
 ## Special Thanks To
