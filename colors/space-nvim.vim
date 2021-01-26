@@ -724,76 +724,83 @@ local highlight_groups = {
     WhichKeyGroup = {fg = blue0, style = 'bold'},
     WhichKeyDesc = {fg = blue1},
 
-    ---------------------
-    -- Neovim Builtins --
-    ---------------------
+    -----------------------------
+    --     LSP Highlighting    --
+    -----------------------------
+    LspDiagnosticsDefaultError           = { fg = red },
+    LspDiagnosticsDefaultWarning         = { fg = yellow },
+    LspDiagnosticsDefaultInformation     = { fg = blue },
+    LspDiagnosticsDefaultHint            = { fg = green0 },
+    LspDiagnosticsVirtualTextError       = { fg = red },
+    LspDiagnosticsVirtualTextWarning     = { fg = yellow },
+    LspDiagnosticsVirtualTextInformation = { fg = blue },
+    LspDiagnosticsVirtualTextHint        = { fg = green0 },
+    LspDiagnosticsUnderlineError         = { fg = red , style = 'underline' },
+    LspDiagnosticsUnderlineWarning       = { fg = yellow , style = 'underline' },
+    LspDiagnosticsUnderlineInformation   = { fg = blue , style = 'underline' },
+    LspDiagnosticsUnderlineHint          = { fg = green0 , style = 'underline' },
+    LspDiagnosticsFloatingError          = { fg = red , bg = pmenu },
+    LspDiagnosticsFloatingWarning        = { fg = yellow , bg = pmenu },
+    LspDiagnosticsFloatingInformation    = { fg = blue , bg = pmenu },
+    LspDiagnosticsFloatingHint           = { fg = green0 , bg = pmenu },
+    LspDiagnosticsSignError              = { fg = red },
+    LspDiagnosticsSignWarning            = { fg = yellow },
+    LspDiagnosticsSignInformation        = { fg = blue },
+    LspDiagnosticsSignHint               = { fg = green0 },
 
-    -- +- Neovim Support -+
-    -- healthError = {}
-    -- healthSuccess = {}
-    -- healthWarning = {}
-    -- TermCursorNC = {}
-    -- LSP Groups (descriptions and ordering from `:h lsp-highlight`)
-    -- LspDiagnosticsError = {} -- used for "Error" diagnostic virtual text
-    -- LspDiagnosticsErrorSign = {} -- used for "Error" diagnostic signs in sign column
-    -- LspDiagnosticsErrorFloating = {} -- used for "Error" diagnostic messages in the diagnostics float
-    -- LspDiagnosticsWarning = {} -- used for "Warning" diagnostic virtual text
-    -- LspDiagnosticsWarningSign = {} -- used for "Warning" diagnostic signs in sign column
-    -- LspDiagnosticsWarningFloating = {} -- used for "Warning" diagnostic messages in the diagnostics float
-    -- LSPDiagnosticsInformation = {} -- used for "Information" diagnostic virtual text
-    -- LspDiagnosticsInformationSign = {}  -- used for "Information" diagnostic signs in sign column
-    -- LspDiagnosticsInformationFloating = {} -- used for "Information" diagnostic messages in the diagnostics float
-    -- LspDiagnosticsHint = {}  -- used for "Hint" diagnostic virtual text
-    -- LspDiagnosticsHintSign = {} -- used for "Hint" diagnostic signs in sign column
-    -- LspDiagnosticsHintFloating = {} -- used for "Hint" diagnostic messages in the diagnostics float
-    -- LspReferenceText = {} -- used for highlighting "text" references
-    -- LspReferenceRead = {} -- used for highlighting "read" references
-    -- LspReferenceWrite = {} -- used for highlighting "write" references
+    -----------------------------
+    -- TreeSitter Highlighting --
+    -----------------------------
+
     -- Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
-    -- TSError = {fg = red, style = 'bold'}, -- For syntax/parser errors
-    -- TSPunctDelimiter = {fg = delim}, -- For delimiters ie: `.
-    -- TSPunctBracket = {} -- For brackets and parens
-    -- TSPunctSpecial = {} -- For special punctutation that does not fall in the catagories before
-    -- TSConstant = {fg = delim}, -- For constants
-    -- TSConstBuiltin = {fg = green0}, -- For constant that are built in the language: `nil` in Lua
-    -- TSConstMacro = {fg = green0}, -- For constants that are defined by macros: `NULL` in C
-    -- TSString = {fg = aqua0}, -- For strings
-    -- TSStringRegex = {} -- For regexes
-    -- TSStringEscape = {} -- For escape characters within a string
-    -- TSCharacter = {fg = purple0}, -- For characters
-    -- TSNumber = {fg = number}, -- For integers
-    -- TSBoolean = {fg = war}, -- For booleans
-    -- TSFloat = {fg = float}, -- For floats
-    -- TSFunction = {fg = purple0}, -- For function (calls and definitions
-    -- TSFuncBuiltin = {fg = purple0}, -- For builtin functions: `table.insert` in Lua
-    -- TSFuncMacro = {fg = purple0}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    -- TSParameter = {} -- For parameters of a function.
-    -- TSParameterReference = {} -- For references to parameters of a function.
-    -- TSMethod = {fg = purple0}, -- For method calls and definitions.
-    -- TSField = {} -- For fields.
-    -- TSProperty = {} -- Same as `TSField`.
-    -- TSConstructor = {} -- For constructor calls and definitions: `{}` in Lua, and Java constructors
-    -- TSConditional = {fg = blue0}, -- For keywords related to conditionnals
-    -- TSRepeat = {fg = red1}, -- For keywords related to loops
-    -- TSLabel = {fg = red1}, -- For labels: `label:` in C and `:label:` in Lua
-    -- TSOperator = {fg = blue}, -- For any operator: `+`, but also `->` and `*` in C
-    TSKeyword = {fg = blue0}, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = {fg = purple0}, -- For keywords used to define a fuction.
-    -- TSException = {fg = red}, -- For exception related keywords.
-    -- TSType = {fg = red1}, -- For types.
-    -- TSTypeBuiltin = {fg = red1}, -- For builtin types (you guessed it, right ?).
-    -- TSStructure = {fg = aqua}, -- This is left as an exercise for the reader.
-    -- TSInclude = {fg = yellow} -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    -- TSAnnotation = {} -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-    -- TSText = {} -- For strings considered text in a markup language.
-    -- TSStrong = {} -- For text to be represented with strong.
-    -- TSEmphasis = {} -- For text to be represented with emphasis.
-    -- TSUnderline = {} -- TSUnderline
-    -- TSTitle = {} -- Text that is part of a title.
-    -- TSLiteral = {} -- Literal text.
-    -- TSURI = {} -- Any URI like a link or email.
-    -- TSVariable = {} -- Any URI like a link or email.
-    -- TSVariableBuiltin = {}  -- Variable names that are defined by the languages, like `this` or `self`.
+    TSAnnotation         = 'PreProc',     -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+    TSAttribute          = 'PreProc',     -- (unstable) TODO: docs
+    TSBoolean            = 'Boolean',     -- For booleans
+    TSCharacter          = 'Character',   -- For characters
+    TSComment            = 'Comment',     -- For comments
+    TSConditional        = 'Conditional', -- For keywords related to conditionnals
+    TSConstant           = 'Constant',    -- For constants
+    TSConstBuiltin       = 'Special',     -- For constant that are built in the language: `nil` in Lua
+    TSConstMacro         = 'Define',      -- For constants that are defined by macros: `NULL` in C
+    TSConstructor        = 'Special',     -- For constructor calls and definitions: `{}` in Lua, and Java constructors
+    TSEmphasis           = 'Italic',      -- For text to be represented with emphasis.
+    TSError              = 'Error',       -- For syntax/parser errors
+    TSException          = 'Exception',   -- For exception related keywords.
+    TSField              = 'Identifier',  -- For fields
+    TSFloat              = 'Float',       -- For floats
+    TSFunction           = 'Function',    -- For function (calls and definitions
+    TSFuncBuiltin        = 'Special',     -- For builtin functions: `table.insert` in Lua
+    TSFuncMacro          = 'Macro',       -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    TSInclude            = 'Include',     -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSKeyword            = 'Keyword',     -- For keywords that don't fall in other categories.
+    TSKeywordFunction    = 'Keyword',     -- For keywords used to define a fuction.
+    TSLabel              = 'Label',       -- For labels: `label:` in C and `:label:` in Lua
+    TSLiteral            = 'String',      -- Literal text.
+    TSMethod             = 'Function',    -- For method calls and definitions.
+    TSNamespace          = 'Include',     -- For identifiers referring to modules and namespaces.
+    TSNumber             = 'Number',      -- For integers
+    TSOperator           = 'Operator',    -- For any operator: `+`, but also `->` and `*` in C
+    TSParameter          = 'Identifier',  -- For parameters of a function.
+    TSParameterReference = 'Identifier',  -- For references to parameters of a function.
+    TSProperty           = 'Identifier',  -- Same as `TSField`.
+    TSPunctBracket       = 'Delimiter',   -- For brackets and parens.
+    TSPunctDelimiter     = 'Delimiter',   -- For delimiters ie: `.`
+    TSPunctSpecial       = 'Delimiter',   -- For special punctutation that does not fall in the catagories before.
+    TSRepeat             = 'Repeat',      -- For keywords related to loops
+    TSString             = 'String',      -- For strings.
+    TSStringEscape       = 'SpecialChar', -- For escape characters within a string.
+    TSStringRegex        = 'String',      -- For regexes.
+    TSStrong             = 'bold',        -- For text to be represented with strong.
+    TSTag                = 'Label',       -- Tags like html tag names.
+    TSTagDelimiter       = 'Label',       -- Tag delimiter like `<` `>` `/`
+    -- TSText               = { fg = yellow },  -- For strings considered text in a markup language.
+    TSTitle              = 'Title',       -- Text that is part of a title.
+    TSType               = 'Type',        -- For types.
+    TSTypeBuiltin        = 'Type',        -- For builtin types (you guessed it, right ?).
+    TSUnderline          = 'Underlined',  -- For underlined text?
+    TSURI                = 'Underlined',  -- Any URI like a link or email.
+    TSVariable            = 'Identifier', -- Any variable name that does not have another highlight.
+    TSVariableBuiltin    = 'Special',     -- Variable names that are defined by the languages, like `this` or `self`.
 
 }
 
