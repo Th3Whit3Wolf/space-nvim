@@ -536,6 +536,12 @@ local highlight_groups = {
     rustSelf = {fg = blue0, style = 'bold'},
     rustPanic = {fg = red1, style = 'bold'},
     rustAssert = {fg = blue1, style = 'bold'},
+    rustKeyword = {fg = red1},
+    rustModPath = {fg = fg1},
+    rustModPathSep = {fg = blue1, style = 'bold'},
+    rustSigil = {fg = blue0},
+    rustAttribute = {fg = fg1},
+
     -- Scala
     scalaNameDefinition = {fg = fg1},
     scalaCaseFollowing = {fg = fg1},
@@ -736,40 +742,40 @@ local highlight_groups = {
     -- LspReferenceRead = {} -- used for highlighting "read" references
     -- LspReferenceWrite = {} -- used for highlighting "write" references
     -- Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
-    TSError = {fg = red, style = 'bold'}, -- For syntax/parser errors
-    TSPunctDelimiter = {fg = delim}, -- For delimiters ie: `.
+    -- TSError = {fg = red, style = 'bold'}, -- For syntax/parser errors
+    -- TSPunctDelimiter = {fg = delim}, -- For delimiters ie: `.
     -- TSPunctBracket = {} -- For brackets and parens
     -- TSPunctSpecial = {} -- For special punctutation that does not fall in the catagories before
-    TSConstant = {fg = delim}, -- For constants
-    TSConstBuiltin = {fg = green0}, -- For constant that are built in the language: `nil` in Lua
-    TSConstMacro = {fg = green0}, -- For constants that are defined by macros: `NULL` in C
-    TSString = {fg = aqua0}, -- For strings
+    -- TSConstant = {fg = delim}, -- For constants
+    -- TSConstBuiltin = {fg = green0}, -- For constant that are built in the language: `nil` in Lua
+    -- TSConstMacro = {fg = green0}, -- For constants that are defined by macros: `NULL` in C
+    -- TSString = {fg = aqua0}, -- For strings
     -- TSStringRegex = {} -- For regexes
     -- TSStringEscape = {} -- For escape characters within a string
-    TSCharacter = {fg = purple0}, -- For characters
-    TSNumber = {fg = number}, -- For integers
-    TSBoolean = {fg = war}, -- For booleans
-    TSFloat = {fg = float}, -- For floats
-    TSFunction = {fg = purple0}, -- For function (calls and definitions
-    TSFuncBuiltin = {fg = purple0}, -- For builtin functions: `table.insert` in Lua
-    TSFuncMacro = {fg = purple0}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    -- TSCharacter = {fg = purple0}, -- For characters
+    -- TSNumber = {fg = number}, -- For integers
+    -- TSBoolean = {fg = war}, -- For booleans
+    -- TSFloat = {fg = float}, -- For floats
+    -- TSFunction = {fg = purple0}, -- For function (calls and definitions
+    -- TSFuncBuiltin = {fg = purple0}, -- For builtin functions: `table.insert` in Lua
+    -- TSFuncMacro = {fg = purple0}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSParameter = {} -- For parameters of a function.
     -- TSParameterReference = {} -- For references to parameters of a function.
-    TSMethod = {fg = purple0}, -- For method calls and definitions.
+    -- TSMethod = {fg = purple0}, -- For method calls and definitions.
     -- TSField = {} -- For fields.
     -- TSProperty = {} -- Same as `TSField`.
     -- TSConstructor = {} -- For constructor calls and definitions: `{}` in Lua, and Java constructors
-    TSConditional = {fg = blue0}, -- For keywords related to conditionnals
-    TSRepeat = {fg = red1}, -- For keywords related to loops
-    TSLabel = {fg = red1}, -- For labels: `label:` in C and `:label:` in Lua
-    TSOperator = {fg = blue}, -- For any operator: `+`, but also `->` and `*` in C
+    -- TSConditional = {fg = blue0}, -- For keywords related to conditionnals
+    -- TSRepeat = {fg = red1}, -- For keywords related to loops
+    -- TSLabel = {fg = red1}, -- For labels: `label:` in C and `:label:` in Lua
+    -- TSOperator = {fg = blue}, -- For any operator: `+`, but also `->` and `*` in C
     TSKeyword = {fg = blue0}, -- For keywords that don't fall in previous categories.
     TSKeywordFunction = {fg = purple0}, -- For keywords used to define a fuction.
-    TSException = {fg = red}, -- For exception related keywords.
-    TSType = {fg = red1}, -- For types.
-    TSTypeBuiltin = {fg = red1}, -- For builtin types (you guessed it, right ?).
-    TSStructure = {fg = aqua}, -- This is left as an exercise for the reader.
-    TSInclude = {fg = yellow} -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    -- TSException = {fg = red}, -- For exception related keywords.
+    -- TSType = {fg = red1}, -- For types.
+    -- TSTypeBuiltin = {fg = red1}, -- For builtin types (you guessed it, right ?).
+    -- TSStructure = {fg = aqua}, -- This is left as an exercise for the reader.
+    -- TSInclude = {fg = yellow} -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     -- TSAnnotation = {} -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     -- TSText = {} -- For strings considered text in a markup language.
     -- TSStrong = {} -- For text to be represented with strong.
@@ -784,22 +790,22 @@ local highlight_groups = {
 }
 
 local terminal_ansi_colors = {
-    [1] = bg0,
-    [2] = tc2,
-    [3] = tc3,
-    [4] = tc4,
-    [5] = tc5,
-    [6] = tc6,
-    [7] = tc7,
-    [8] = tc8,
-    [9] = red,
-    [10] = green,
-    [11] = tc6,
-    [12] = tc12,
-    [13] = tc13,
-    [14] = tc14,
-    [15] = tc15,
-    [16] = tc13
+    [0]  = bg0,
+    [1]  = tc2,
+    [2]  = tc3,
+    [3]  = tc4,
+    [4]  = tc5,
+    [5]  = tc6,
+    [6]  = tc7,
+    [7]  = tc8,
+    [8]  = red,
+    [9]  = green,
+    [10] = tc6,
+    [11] = tc12,
+    [12] = tc13,
+    [13] = tc14,
+    [14] = tc15,
+    [15] = tc13
 }
 
 require(vim.g.colors_name)(highlight_group_normal, highlight_groups, terminal_ansi_colors)
