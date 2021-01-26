@@ -15,6 +15,7 @@ Light theme
 *Font:* Jet Brains Mono
 *Statusline:* [Spaceline](https://github.com/glepnir/spaceline.vim)
 *RGB Highlightin:* [nvim-colorizer.](https://github.com/norcalli/nvim-colorizer.lua)
+*Minimap:* [minimap.vim](https://github.com/wfxr/minimap.vim)
 
 ### Getting Started
 
@@ -23,19 +24,19 @@ Only termguicolors are supported and that will not change.
 #### Vim Plug
 
 ```vim
-Plug 'Th3Whit3Wolf/space-nvim-theme'
+Plug 'Th3Whit3Wolf/space-nvim'
 
 " And then somewhere in your init.vim, to set the colorscheme
-colorscheme space-nvim-theme
+colorscheme space-nvim
 ```
 
 #### Minpac
 
 ```vim
-call minpac#add('Th3Whit3Wolf/space-nvim-theme')
+call minpac#add('Th3Whit3Wolf/space-nvim')
 
 " And then somewhere in your init.vim, to set the colorscheme
-colorscheme space-nvim-theme
+colorscheme space-nvim
 ```
 
 #### Vim Packages
@@ -44,17 +45,17 @@ In the terminal execute this command.
 
 ```sh
 cd ~/.local/share/nvim/site/pack/opt/
-git clone https://github.com/Th3Whit3Wolf/space-nvim-theme
+git clone https://github.com/Th3Whit3Wolf/space-nvim
 ```
 
 In your `init.vim` add the following
 
 ```vim
-packadd! space-nvim-theme
+packadd! space-nvim
 ```
 
 ```vim
-colorscheme space-nvim-theme
+colorscheme space-nvim
 ```
 
 ### NOTE
