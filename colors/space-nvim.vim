@@ -3,6 +3,7 @@ vim.g.colors_name = "space-nvim"
 
 if vim.o.background == "dark" then
     -- Dark Colors
+    act1 = {"#222226", 235, "act1"}
     bg0 = {"#292b2e", 16, "bg0"}
     bg1 = {"#212026", 235, "bg1"}
     bg2 = {"#100a14", 233, "bg2"}
@@ -12,8 +13,8 @@ if vim.o.background == "dark" then
     fg1 = {"#b2b2b2", 249, "fg1"}
     fg2 = {"#8e8e8e", 245, "fg2"}
     fg3 = {"#727272", 243, "fg3"}
-    fg4 = {"#9a9aba", 247, "fg5"}
-    fg5 = {"#5e5079", 241, "fg6"}
+    fg4 = {"#9a9aba", 247, "fg4"}
+    fg5 = {"#5e5079", 241, "fg5"}
     --fg6        = {'#666666', 241, 'fg7'}
     grey = {"#44505c", 239, "grey"}
     grey1 = {"#768294", 102, "grey1"}
@@ -32,6 +33,8 @@ if vim.o.background == "dark" then
     spacelight = {"#444155", 238, "spacelight"} -- highlight seems to be an illegal keyword here
     comp = {"#c56ec3", 248, "comp"}
     cblk = {"#cbc1d5", 252, "cblk"}
+    -- ui_fg = {}
+    ui_activ = {"#5d4d7a", 241, "ui_activ"}
 
     -- Terminal Colors
     tc8 = {"#5b5b5b", 240, "tc8"}
@@ -42,6 +45,7 @@ if vim.o.background == "dark" then
     tc16 = {"#bc6ec5", 104, "tc16"}
 else
     -- Light Colors
+    act1 = {"#e7e5eb", 254, "act1"}
     bg0 = {"#fbf8ef", 255, "bg0"}
     bg1 = {"#efeae9", 255, "bg1"}
     bg2 = {"#e3dedd", 254, "bg2"}
@@ -51,8 +55,8 @@ else
     fg1 = {"#655370", 241, "fg1"}
     fg2 = {"#5a4a64", 240, "fg2"}
     fg3 = {"#504259", 239, "fg3"}
-    fg4 = {"#8c799f", 103, "fg5"}
-    fg5 = {"#c8c6dd", 188, "fg6"}
+    fg4 = {"#8c799f", 103, "fg4"}
+    fg5 = {"#c8c6dd", 188, "fg5"}
     -- fg6        = {'#666666', 241, 'fg7'}
     grey = {"#a8a8bf", 145, "grey"}
     grey1 = {"#768294", 102, "grey1"}
@@ -71,6 +75,7 @@ else
     spacelight = {"#d3d3e7", 253, "spacelight"} -- highlight seems to be an illegal keyword here
     comp = {"#6c4173", 60, "comp"}
     cblk = {"#655370", 241, "cblk"}
+    ui_activ = {"#fbf8ef", 255, "ui_activ"}
 
     -- Terminal Colors
     tc8       = {'#463a4e', 238, 'tc8'}
@@ -549,7 +554,6 @@ local highlight_groups = {
     rustModPathSep = {fg = blue1, style = 'bold'},
     rustSigil = {fg = blue0},
     rustAttribute = {fg = fg1},
-
     -- Scala
     scalaNameDefinition = {fg = fg1},
     scalaCaseFollowing = {fg = fg1},
@@ -624,6 +628,30 @@ local highlight_groups = {
     ALEErrorSign = {fg = red},
     ALEWarningSign = {fg = yellow},
     ALEInfoSign = {fg = blue0},
+    -- Barbar (romgrk/barbar.nvim)
+    BufferCurrent = {fg = fg1, bg = ui_activ},
+    BufferCurrentIndex = {fg = fg1, bg = ui_activ},
+    BufferCurrentMod = {fg = fg1, bg = ui_activ},
+    BufferCurrentSign = {fg = fg1, bg = bg0},
+    BufTabLineCurrent = {fg = fg1, bg = ui_activ},
+    BufferCurrentTarget = {fg = fg1, bg = ui_activ, style = bold},
+
+    BufferVisible = {fg = grey, bg = bg1},
+    BufferVisibleIndex = {fg = grey, bg = bg1},
+    BufferVisibleMod = {fg = grey, bg = bg1},
+    BufferVisibleSign = {fg = bg0, bg = bg0},
+    BufferVisibleTarget = {fg = grey, bg = bg1, style = bold},
+
+    BufferInactive = {fg = grey, bg = bg1},
+    BufferInactiveIndex = {fg = grey, bg = bg1},
+    BufferInactiveMod = {fg = grey, bg = bg1},
+    BufferInactiveSign = {fg = bg0, bg = bg0},
+    BufferInactiveTarget = {fg = grey, bg = bg1, style = bold},
+
+    BufferTabpages = {fg = bg0, bg = bg0, style = bold},
+    BufferTabpageFill = {fg = bg0, bg = bg0, style = bold},
+    BufferPart = {fg = bg0, bg = bg0, style = bold},
+
     -- Buftabline (ap/vim-buftabline)
     BufTabLineCurrent = {fg = bg0, bg = fg4},
     BufTabLineActive = {fg = fg4, bg = bg2},
@@ -723,7 +751,6 @@ local highlight_groups = {
     WhichKeySeperator = {fg = green},
     WhichKeyGroup = {fg = blue0, style = 'bold'},
     WhichKeyDesc = {fg = blue1},
-
     -----------------------------
     --     LSP Highlighting    --
     -----------------------------
@@ -750,11 +777,9 @@ local highlight_groups = {
     LspReferenceText                     = { style = 'reverse' },
     LspReferenceRead                     = { style = 'reverse' },
     LspReferenceWrite                    = { fg = red1, style = 'reverse' },
-
     -----------------------------
     -- TreeSitter Highlighting --
     -----------------------------
-
     -- Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
     TSAnnotation         = 'PreProc',     -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     TSAttribute          = 'PreProc',     -- (unstable) TODO: docs
