@@ -220,8 +220,8 @@ local highlight_groups = {
     TabLineSel = {fg = green, bg = bg1},
     TabLine = {fg = purple, bg = bg1},
     Title = {fg = green, style = 'bold'}, -- titles for output from ":set all", ":autocmd" etc.
-    Visual = {fg = fg0, bg = purple}, -- Visual mode selection
-    VisualNOS = {fg = fg0, bg = purple}, -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
+    Visual = {fg = fg0, bg = spacelight}, -- Visual mode selection
+    VisualNOS = {fg = fg0, bg = spacelight}, -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
     WarningMsg = {fg = red}, --  warning messages
     WildMenu = {fg = orange0, bg = bg1, style = 'bold'}, --  current match in 'wildmenu' completion
 
@@ -236,7 +236,7 @@ local highlight_groups = {
     NormalMode = {fg = fg4, style = 'reverse'},
     InsertMode = {fg = blue0, style = 'reverse'},
     ReplaceMode = {fg = aqua0, style = 'reverse'},
-    VisualMode = {fg = orange0, style = 'reverse'},
+    VisualMode = {fg = spacelight, style = 'reverse'},
     CommandMode = {fg = purple0, style = 'reverse'},
     Warnings = {fg = orange0, style = 'reverse'},
 
