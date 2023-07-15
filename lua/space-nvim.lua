@@ -11,12 +11,12 @@ local _TYPE_TABLE  = 'table'
 
 -- Determine which set of colors to use.
 local _USE_HEX = vim.o.termguicolors
-local _USE_256 = string.find(vim.env.TERM, '256')
-
--- Determine which set of colors to use.
-local _USE_HEX = vim.o.termguicolors
-local _USE_256 = string.find(vim.env.TERM, '256')
-    
+local _USE_256
+if vim.env.TERM then
+	_USE_256 = string.find(vim.env.TERM, '256')
+else
+	_USE_256 = nil
+end
 
 --[[ HELPER FUNCTIONS ]]
 
