@@ -186,7 +186,7 @@ local highlight_groups = {
     DiffDelete = {fg = red, style = 'reverse'}, -- diff mode: Deleted line
     DiffText = {fg = yellow, style = 'reverse'}, -- diff mode: Changed text within a changed line
     EndOfBuffer = {fg = bg0}, -- filler lines (~) after the last line in the buffer
-    ErrorMsg = {fg = bg0, bg = bg1}, -- error messages on the command line
+    ErrorMsg = {fg = red1, bg = bg1}, -- error messages on the command line
     VertSplit = {fg = bg1}, -- the column separating verti-- cally split windows
     Folded = {fg = purple2, bg = bg1, style = 'italic'}, -- line used for closed folds
     FoldColumn = {fg = purple0}, -- 'foldcolumn'
